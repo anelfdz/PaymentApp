@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="amount"
+            type="Double" />
+
+        <variable
+            name="paymentMethod"
+            type="anelfdz.paymentapp.data.vo.PaymentMethod" />
+
+        <variable
+            name="bank"
+            type="anelfdz.paymentapp.data.vo.Bank" />
+
+        <variable
+            name="installment"
+            type="anelfdz.paymentapp.data.vo.Installment" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/payment_method_icon"
+                android:layout_width="@dimen/payment_method_icon_small_size"
+                android:layout_height="@dimen/payment_method_icon_small_size"
+                android:layout_marginTop="12dp"
+                app:actualImageResource="@mipmap/ic_launcher"
+                app:actualImageScaleType="fitCenter"
+                app:imageUrl="@{paymentMethod.thumbnailUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_amount"
+                app:placeholderImage="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/text_payment_method_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:text="@{paymentMethod.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/payment_method_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/payment_method_icon"
+                app:layout_constraintTop_toTopOf="@+id/payment_method_icon"
+                tools:text="MASTER CARD" />
+
+            <TextView
+                android:id="@+id/text_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:currencyAmount="@{amount}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="$20,300" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/bank_icon"
+                android:layout_width="@dimen/payment_method_icon_small_size"
+                android:layout_height="@dimen/payment_method_icon_small_size"
+                android:layout_marginTop="16dp"
+                app:actualImageResource="@mipmap/ic_launcher"
+                app:actualImageScaleType="fitCenter"
+                app:imageUrl="@{bank.thumbnailUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/payment_method_icon"
+                app:placeholderImage="@mipmap/ic_launcher" />
+
+
+            <TextView
+                android:id="@+id/text_bank_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:text="@{bank.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/bank_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/bank_icon"
+                app:layout_constraintTop_toTopOf="@id/bank_icon"
+                tools:text="BCI" />
+
+            <TextView
+                android:id="@+id/text_recommended_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{installment.recommendedMessage}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/button_pay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bank_icon"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                tools:text="1 cuota de $ 20.000,00 ($ 20.000,00)" />
+
+            <Button
+                android:id="@+id/button_pay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:text="@string/pay"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_recommended_message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Payment App</string>
+
+    <string name="input_amount">Input amount</string>
+    <string name="amount">Amount</string>
+    <string name="submit">Submit</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="fragment_payment_method_label">Payment methods</string>
+    <string name="fragment_bank_label">Banks</string>
+    <string name="fragment_installment_label">Installments</string>
+    <string name="pay">Pay</string>
+</resources>

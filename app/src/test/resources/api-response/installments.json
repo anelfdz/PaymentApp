@@ -1,0 +1,24 @@
+[
+  {
+    "payer_costs": [
+      {
+        "installments": 1,
+        "recommended_message": "1 cuota de $ 20.000,00 ($ 20.000,00)",
+        "installment_amount": 20000,
+        "total_amount": 20000
+      },
+      {
+        "installments": 3,
+        "recommended_message": "3 cuotas de $ 7.981,33 ($ 23.944,00)",
+        "installment_amount": 7981.33,
+        "total_amount": 23944
+      },
+      {
+        "installments": 6,
+        "recommended_message": "6 cuotas de $ 4.483,00 ($ 26.898,00)",
+        "installment_amount": 4483,
+        "total_amount": 26898
+      }
+    ]
+  }
+]
